@@ -120,7 +120,7 @@ public class ServiceStateChanger extends JavaPlugin {
                 )
                 .withSubcommand(
                         new CommandAPICommand("CUSTOM")
-                                .withPermission("servicestate.lobby")
+                                .withPermission("servicestate.custom")
                                 .withArguments(new TextArgument("customServiceState"))
                                 .executesPlayer((player, args) -> {
                                     String customServiceState = (String) args[0];

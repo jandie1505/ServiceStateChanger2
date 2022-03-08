@@ -1,0 +1,27 @@
+main: net.jandie1505.servicestatechanger.ServiceStateChanger
+name: ServiceStateChanger
+version: 2.0
+api-version: 1.16
+depend: [CloudNet-Bridge]
+
+permissions:
+  servicestate.get:
+    description: Get the service state
+    default: op
+  servicestate.ingame:
+    description: Set the service state to ingame
+    default: op
+  servicestate.lobby:
+    description: Set the service state to lobby
+    default: op
+  servicestate.custom:
+    description: Set a custom service state
+    default: op
+  servicestate.*:
+    description: Grant all permissions
+    default: op
+    children:
+      servicestate.get: true
+      servicestate.ingame: true
+      servicestate.lobby: true
+      servicestate.custom: true
