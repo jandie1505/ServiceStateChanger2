@@ -3,6 +3,7 @@ package net.jandie1505.servicestatechanger;
 import de.dytanic.cloudnet.ext.bridge.bukkit.BukkitCloudNetHelper;
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPICommand;
+import dev.jorel.commandapi.CommandAPIConfig;
 import dev.jorel.commandapi.arguments.BooleanArgument;
 import dev.jorel.commandapi.arguments.TextArgument;
 import org.bukkit.Bukkit;
@@ -15,7 +16,7 @@ public class ServiceStateChanger extends JavaPlugin {
     public void onLoad() {
         plugin = this;
 
-        CommandAPI.onLoad(false);
+        CommandAPI.onLoad(new CommandAPIConfig());
 
         new CommandAPICommand("servicestate")
                 .withPermission("servicestate.get")
