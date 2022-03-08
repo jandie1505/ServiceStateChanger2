@@ -9,7 +9,7 @@ ServiceStateChanger is a plugin that can be used to set the state of a service t
 ## Commands and Permissions
 | Command | Permission | Description |
 |--|--|--|
-| `/servicestate` | servicestate.get | Shows the current state |
-| `/servicestate INGAME [startNewService]` | servicestate.setIngame | Set the state to ingame and start a new service of the same task |
-| `/servicestate LOBBY` | servicestate.setLobby | Set the state to lobby |
-| `/servicestate CUSTOM <Text>` | servicestate.setCustom | Set the state to a custom state (this custom state is the same as the lobby state with another name) |
+| `/servicestate` | `servicestate.get` | Shows the current state |
+| `/servicestate INGAME [startNewService]` | `servicestate.setIngame` | Set the state to ingame and start a new service of the same task |
+| `/servicestate LOBBY` | `servicestate.lobby` | Set the state to lobby |
+| `/servicestate CUSTOM <Text>` | `servicestate.custom` | Set the state to a custom state (this custom state is the same as the lobby state with another name) |
