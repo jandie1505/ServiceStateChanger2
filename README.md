@@ -3,7 +3,7 @@ ServiceStateChanger is a plugin that can be used to set the state of a service t
 ## Dependencies
 - CloudNet v3
 ## Installation
-1. Download the plugin *for the correct minecraft version* from the releases page
+1. Download the plugin **for the correct minecraft version** from the releases page
 2. Put the downloaded jar file into your plugin folder
 3. Restart the server
 ## Commands and Permissions
