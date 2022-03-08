@@ -1,7 +1,7 @@
 main: net.jandie1505.servicestatechanger.ServiceStateChanger
 name: ServiceStateChanger
 version: 2.0
-api-version: 1.16
+api-version: 1.17
 depend: [CloudNet-Bridge]
 
 permissions:
