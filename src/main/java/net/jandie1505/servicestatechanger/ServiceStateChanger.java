@@ -37,9 +37,6 @@ public class ServiceStateChanger extends JavaPlugin {
                 .executesProxy((proxy, args) -> {
                     return this.getStateId();
                 })
-                .executesNative((proxy, args) -> {
-                    return this.getStateId();
-                })
                 .withSubcommand(
                         new CommandAPICommand("LOBBY")
                                 .withPermission("servicestate.lobby")
@@ -58,9 +55,6 @@ public class ServiceStateChanger extends JavaPlugin {
                                     this.setState("LOBBY");
                                 })
                                 .executesProxy((proxy, args) -> {
-                                    this.setState("LOBBY");
-                                })
-                                .executesNative((proxy, args) -> {
                                     this.setState("LOBBY");
                                 })
                 )
@@ -90,10 +84,6 @@ public class ServiceStateChanger extends JavaPlugin {
                                     boolean startNewService = (boolean) args[0];
                                     this.setIngame(startNewService);
                                 })
-                                .executesNative((proxy, args) -> {
-                                    boolean startNewService = (boolean) args[0];
-                                    this.setIngame(startNewService);
-                                })
                 )
                 .withSubcommand(
                         new CommandAPICommand("INGAME")
@@ -113,9 +103,6 @@ public class ServiceStateChanger extends JavaPlugin {
                                     this.setIngame(true);
                                 })
                                 .executesProxy((proxy, args) -> {
-                                    this.setIngame(true);
-                                })
-                                .executesNative((proxy, args) -> {
                                     this.setIngame(true);
                                 })
                 )
@@ -142,10 +129,6 @@ public class ServiceStateChanger extends JavaPlugin {
                                     this.setState(customServiceState);
                                 })
                                 .executesProxy((proxy, args) -> {
-                                    String customServiceState = (String) args[0];
-                                    this.setState(customServiceState);
-                                })
-                                .executesNative((proxy, args) -> {
                                     String customServiceState = (String) args[0];
                                     this.setState(customServiceState);
                                 })
