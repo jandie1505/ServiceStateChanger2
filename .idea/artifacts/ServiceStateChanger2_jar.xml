@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/ServiceStateChanger2_jar</output-path>
     <root id="archive" name="ServiceStateChanger2.jar">
       <element id="module-output" name="ServiceStateChanger2" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/dev/jorel/CommandAPI/commandapi-shade/5.12/commandapi-shade-5.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/dev/jorel/CommandAPI/commandapi-shade/6.5.4/commandapi-shade-6.5.4.jar" path-in-jar="/" />
       <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
     </root>
   </artifact>
