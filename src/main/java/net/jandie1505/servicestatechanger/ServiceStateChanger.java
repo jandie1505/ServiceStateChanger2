@@ -2,8 +2,8 @@ package net.jandie1505.servicestatechanger;
 
 import de.dytanic.cloudnet.ext.bridge.bukkit.BukkitCloudNetHelper;
 import dev.jorel.commandapi.CommandAPI;
+import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import dev.jorel.commandapi.CommandAPICommand;
-import dev.jorel.commandapi.CommandAPIConfig;
 import dev.jorel.commandapi.arguments.BooleanArgument;
 import dev.jorel.commandapi.arguments.TextArgument;
 import org.bukkit.Bukkit;
@@ -16,7 +16,7 @@ public class ServiceStateChanger extends JavaPlugin {
     public void onLoad() {
         plugin = this;
 
-        CommandAPI.onLoad(new CommandAPIConfig());
+        CommandAPI.onLoad(new CommandAPIBukkitConfig(this));
 
         new CommandAPICommand("servicestate")
                 .withPermission("servicestate.get")
@@ -63,25 +63,25 @@ public class ServiceStateChanger extends JavaPlugin {
                                 .withPermission("servicestate.ingame")
                                 .withArguments(new BooleanArgument("startNewService (default=true)"))
                                 .executesPlayer((player, args) -> {
-                                    boolean startNewService = (boolean) args[0];
+                                    boolean startNewService = (boolean) args.args()[0];
                                     this.setIngame(startNewService);
                                     player.sendMessage("§aService state was changed to §eINGAME§a (Start new service: " + startNewService + "true)");
                                 })
                                 .executesConsole((console, args) -> {
-                                    boolean startNewService = (boolean) args[0];
+                                    boolean startNewService = (boolean) args.args()[0];
                                     this.setIngame(startNewService);
                                     console.sendMessage("Service state changed to INGAME" + startNewService + "true)");
                                 })
                                 .executesEntity((entity, args) -> {
-                                    boolean startNewService = (boolean) args[0];
+                                    boolean startNewService = (boolean) args.args()[0];
                                     this.setIngame(startNewService);
                                 })
                                 .executesCommandBlock((block, args) -> {
-                                    boolean startNewService = (boolean) args[0];
+                                    boolean startNewService = (boolean) args.args()[0];
                                     this.setIngame(startNewService);
                                 })
                                 .executesProxy((proxy, args) -> {
-                                    boolean startNewService = (boolean) args[0];
+                                    boolean startNewService = (boolean) args.args()[0];
                                     this.setIngame(startNewService);
                                 })
                 )
@@ -111,25 +111,25 @@ public class ServiceStateChanger extends JavaPlugin {
                                 .withPermission("servicestate.custom")
                                 .withArguments(new TextArgument("customServiceState"))
                                 .executesPlayer((player, args) -> {
-                                    String customServiceState = (String) args[0];
+                                    String customServiceState = (String) args.args()[0];
                                     this.setState(customServiceState);
                                     player.sendMessage("§aService state was changed to §e+ " + customServiceState + "§a (=LOBBY)");
                                 })
                                 .executesConsole((console, args) -> {
-                                    String customServiceState = (String) args[0];
+                                    String customServiceState = (String) args.args()[0];
                                     this.setState(customServiceState);
                                     console.sendMessage("Service state changed to " + customServiceState + " (=LOBBY)");
                                 })
                                 .executesEntity((entity, args) -> {
-                                    String customServiceState = (String) args[0];
+                                    String customServiceState = (String) args.args()[0];
                                     this.setState(customServiceState);
                                 })
                                 .executesCommandBlock((block, args) -> {
-                                    String customServiceState = (String) args[0];
+                                    String customServiceState = (String) args.args()[0];
                                     this.setState(customServiceState);
                                 })
                                 .executesProxy((proxy, args) -> {
-                                    String customServiceState = (String) args[0];
+                                    String customServiceState = (String) args.args()[0];
                                     this.setState(customServiceState);
                                 })
                 )
@@ -139,7 +139,7 @@ public class ServiceStateChanger extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        CommandAPI.onEnable(this);
+        CommandAPI.onEnable();
 
         Bukkit.getLogger().info("ServiceStateChanger v2 by jandie1505 was successfully enabled");
     }
