@@ -14,8 +14,9 @@ ServiceStateChanger is a plugin that can be used to set the state of a service t
 | `/servicestate LOBBY` | `servicestate.lobby` | Set the state to lobby |
 | `/servicestate CUSTOM <Text>` | `servicestate.custom` | Set the state to a custom state (this custom state is the same as the lobby state with another name) |
 ## Supported Versions
-| Minecraft | Java | CommandAPI |
-|--|--|--|
-| 1.16 | 11+ | 5.12 |
-| 1.17 | 16+ | 6.4.0 |
-| 1.18 | 17+ | 6.5.4 |
+| Minecraft | Java | CommandAPI | CloudNet |
+|--|--|--|--|
+| 1.16 | 11+ | 5.12 | v3 |
+| 1.17 | 16+ | 6.4.0 | v3 |
+| 1.18 | 17+ | 6.5.4 | v3 |
+| 1.20.1 | 17+ | 9.0.3 | 4.0.0-RC9 |
