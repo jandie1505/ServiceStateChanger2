@@ -1,11 +1,12 @@
 package net.jandie1505.servicestatechanger;
 
-import de.dytanic.cloudnet.ext.bridge.bukkit.BukkitCloudNetHelper;
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.arguments.BooleanArgument;
 import dev.jorel.commandapi.arguments.TextArgument;
+import eu.cloudnetservice.driver.inject.InjectionLayer;
+import eu.cloudnetservice.modules.bridge.BridgeServiceHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -144,18 +145,22 @@ public class ServiceStateChanger extends JavaPlugin {
         Bukkit.getLogger().info("ServiceStateChanger v2 by jandie1505 was successfully enabled");
     }
 
+    private BridgeServiceHelper bridgeServiceHelper() {
+        return InjectionLayer.ext().instance(BridgeServiceHelper.class);
+    }
+
     public void setState(String serviceState) {
-        BukkitCloudNetHelper.setState(serviceState);
+        this.bridgeServiceHelper().state().set(serviceState);
         Bukkit.getLogger().info("Service state updated to: " + serviceState + " (=LOBBY)");
     }
 
     public void setIngame(boolean startNewService) {
-        BukkitCloudNetHelper.changeToIngame(startNewService);
+        this.bridgeServiceHelper().changeToIngame(startNewService);
         Bukkit.getLogger().info("Service state updated to INGAME (=INGAME), Autostart new service: " + startNewService);
     }
 
     public String getState() {
-        return BukkitCloudNetHelper.getState();
+        return this.bridgeServiceHelper().state().get();
     }
 
     public int getStateId() {
